@@ -1,3 +1,13 @@
+<?php 
+	function my_autoloader($class) {
+    	include 'class/' .$class.'.php';
+	}
+
+	spl_autoload_register('my_autoloader');
+	$mem = new Member();
+	$db = new Database();
+	
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,10 +37,8 @@
 	          Member
 	        </a>
 	        <div class="dropdown-menu nav-background-color" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="addmember.html">Add Member</a>
-	          <a class="dropdown-item" href="memberlist.html">Member List</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
+	          <a class="dropdown-item" href="addmember.php">Add Member</a>
+	          <a class="dropdown-item" href="memberlist.php">Member List</a>
 	        </div>
 	      </li>
 	     

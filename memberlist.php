@@ -1,4 +1,11 @@
 <?php include('inc/header.php'); ?>
+<?php
+	if (isset($_POST['addmember'])) {
+		$msg = $mem->addMember($_POST);
+	} else {
+		
+	}
+ ?>
 
 	<div class="container mt-4">
 		<nav aria-label="breadcrumb">
@@ -9,6 +16,10 @@
 		    
 		  </ol>
 		</nav>
+		
+		<?php if(isset($msg)) echo $msg; ?>
+		<br>
+		
 		<table id="dataTable" style="width: 100%; ">
 			<thead>
 				<tr>
@@ -29,7 +40,7 @@
 					<td>arifsofg@gmail.com</td>
 					<td>Elenga Tangail</td>
 					<td>General Member</td>
-					<td><a href="#" class="btn btn-primary">Edit</a></td>
+					<td><a href="#" class="btn btn-primary">E</a></td>
 				</tr>
 			</tbody>
 		</table>
