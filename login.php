@@ -16,6 +16,7 @@
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
 
+
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
@@ -29,8 +30,6 @@
 	        <div class="dropdown-menu nav-background-color" aria-labelledby="navbarDropdown">
 	          <a class="dropdown-item" href="addmember.html">Add Member</a>
 	          <a class="dropdown-item" href="memberlist.html">Member List</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
 	        </div>
 	      </li>
 	     
@@ -50,40 +49,31 @@
 	<!-- navbar end -->
 
 	<!--container-->
+	
+	
+	<div class="container mt-4" style="width: 45%; margin: 0 auto;">
+		
+		<h2>Login</h2>	
+		<form method="post" action="index.php">
+		  
+			  	<div class="md-3 col-sm-12">
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Username</label>
+				    <input type="text"  name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+				  </div>
+				  <d
 
-	<div class="container mt-4">
-		<nav aria-label="breadcrumb">
-		  <ol class="breadcrumb">
-		    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-		    <li class="breadcrumb-item"><a href="memberlist.html">Member</a></li>
-		    <li class="breadcrumb-item active" aria-current="page">Member List</li>
-		    
-		  </ol>
-		</nav>
-		<table id="dataTable" style="width: 100%; ">
-			<thead>
-				<tr>
-					<th>Serial</th>
-					<th>Name</th>
-					<th>Username</th>
-					<th>Email</th>
-					<th>Address</th>
-					<th>Designtaion</th>
-					<th>Action</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Ariful Islam</td>
-					<td>arifsofg</td>
-					<td>arifsofg@gmail.com</td>
-					<td>Elenga Tangail</td>
-					<td>General Member</td>
-					<td><a href="#" class="btn btn-primary">Edit</a></td>
-				</tr>
-			</tbody>
-		</table>
+				   <div class="form-group">
+				    <label for="exampleInputPassword1">Password</label>
+				    <input type="text" name="address" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				  </div>
+				<button class="btn btn-success mt-2">Login</button>
+				<p class="alert alert-warning mt-1">Username and Password Not matched</p>
+			  </div>
+
+
+		</form>
+		
 	</div>
 
 
