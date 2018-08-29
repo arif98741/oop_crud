@@ -1,11 +1,20 @@
 <?php 
+	$self_path  = $_SERVER['PHP_SELF'];
+	$explode = explode('/', $self_path);
+	unset($explode[0]);
+	
 	function my_autoloader($class) {
     	include 'class/' .$class.'.php';
 	}
 
 	spl_autoload_register('my_autoloader');
+	include_once('lib/helper/Helper.php');
 	$mem = new Member();
-	$db = new Database();
+	$db  = new Database();
+	$helper = new Helper();
+
+	//echo $helper->currentPath();
+
 	
 ?>
 <!DOCTYPE html>
@@ -58,3 +67,5 @@
 	<!-- navbar end -->
 
 	<!--container-->
+
+

@@ -10,9 +10,12 @@
 	<div class="container mt-4">
 		<nav aria-label="breadcrumb">
 		  <ol class="breadcrumb">
-		    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-		    <li class="breadcrumb-item"><a href="memberlist.php">Member</a></li>
-		    <li class="breadcrumb-item active" aria-current="page">Member List</li>
+		  	
+		  	<?php foreach ( $helper->currentPath() as $value): ?>
+
+		    <li class="breadcrumb-item"><a  href="<?php echo $value; ?>"><?php echo ucfirst(str_replace('.php', '', $value)); ?></a></li>
+		   
+		    <?php endforeach; ?>
 		    
 		  </ol>
 		</nav>

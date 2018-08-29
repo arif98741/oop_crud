@@ -21,15 +21,26 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Ariful Islam</td>
-					<td>arifsofg</td>
-					<td>arifsofg@gmail.com</td>
-					<td>Elenga Tangail</td>
-					<td>General Member</td>
-					<td><a href="#" class="btn btn-success">V</a>&nbsp;<a href="#" class="btn btn-primary">E</a>&nbsp;<a href="#" class="btn btn-danger">D</a></td>
-				</tr>
+				<?php 
+					$sql = "select * from member";
+					$stmt = $db->pdo->query($sql);
+
+
+					if($stmt){ $i = 0;
+						while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { $i++; ?>
+						    <tr>
+								<td><?php echo $i; ?></td>
+								<td><?php echo $row['name']; ?></td>
+								<td><?php echo $row['username']; ?></td>
+								<td><?php echo $row['email']; ?></td>
+								<td><?php echo $row['address']; ?></td>
+								<td><?php echo $row['designation']; ?></td>
+								<td><a href="viewmember.php?action=view&id=<?php echo $row['id']; ?>" class="btn btn-success">V</a>&nbsp;<a href="editmember.php?action=edit&id=<?php echo $row['id']; ?>" class="btn btn-primary">E</a>&nbsp;<a href="?action=delete&id=<?php echo $row['id']; ?>" class="btn btn-danger">D</a></td>
+							</tr>
+					<?php	}
+					}
+				 ?>
+				
 			</tbody>
 		</table>
 	</div>
