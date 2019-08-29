@@ -8,6 +8,12 @@ class Database {
     private $namedb = "oop_crud";
     public $pdo;
 
+    /*
+    ||==========================================
+    ||  Set Database Connection
+    ||  Make Connection During Class Instance
+    ||==========================================
+    */
     public function __construct() {
         if (!isset($this->pdo)) {
             try {

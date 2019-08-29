@@ -11,6 +11,13 @@ class Member {
         $this->db = new Database();
     }
 
+    /*
+    ||==========================================
+    || Add Member
+    || @param array
+    || return string
+    ||==========================================
+    */
     public function addMember($data) { //form validation method 
         $name           = $data['name'];
         $username       = $data['username'];
@@ -70,6 +77,14 @@ class Member {
         }
     }
 
+
+    /*
+    ||==========================================
+    || Check Email Existance
+    || @param string
+    || return bool
+    ||==========================================
+    */
     public function emailCheck($email) {
         $sql = "select email from member where email= :email";
         $query = $this->db->pdo->prepare($sql);
@@ -82,7 +97,14 @@ class Member {
         }
     }
 
-    //get username and password from table for login
+
+    /*
+    ||==========================================
+    ||  Get username and password from table for login
+    || @param $email,$password
+    || return object
+    ||==========================================
+    */
     public function getLoginUser($email, $password) {
         $sql = "select * from tbl_user where email= :email AND password = :password LIMIT 1";
         $query = $this->db->pdo->prepare($sql);
@@ -93,7 +115,13 @@ class Member {
         return $result;
     }
 
-    //login method
+    /*
+    ||==========================================
+    ||  User Login To System
+    || @param array
+    || return string
+    ||==========================================
+    */
     public function userLogin($data) {
 
         $email = $data['email'];
