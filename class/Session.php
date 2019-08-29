@@ -47,7 +47,7 @@ class Session {
 
     /*
     ||==========================================
-    ||  Check User Login
+    ||  Check User Login and Redirection
     ||==========================================
     */
     public static function checkLogin() {
